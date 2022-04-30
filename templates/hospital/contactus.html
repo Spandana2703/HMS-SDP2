@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+{% load static %}
+{% load widget_tweaks %}
+<html lang="en" dir="ltr">
+
+<style>
+body {
+  background-image: url('/static/images/OOPS.webp');
+}
+</style>
+
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <title>HMS - Django</title>
+
+
+</head>
+
+<body>
+
+  {% include "hospital/navbar.html" %}
+  <br><br>
+
+  <center>
+    <h3 class='alert alert-success'>Send Us Your Valuable Feedback !</h3>
+
+    <form method="POST">
+      <!-- Very Important csrf Token -->
+      {% csrf_token %}
+      <div class="form-group">
+        <p>
+        <h5>{{ form.as_p }}</h5>
+        </p>
+        <br>
+        <input type="submit" value="Send Message" class='btn btn-dark'>
+      </div>
+    </form>
+  </center>
+
+</body>
+
+
+</html>
